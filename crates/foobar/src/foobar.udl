@@ -1,13 +1,24 @@
 namespace foobar {};
 
+// Unfortunately we have to annotate EACH type
+// with `ExternalExport="<CRATE_NAME>`" which
+// is a bit verbose, i.e. we cannot declare
+// [ExternalExport="foo"] **once**, and then
+// itemize all types from the "foo" crate we
+// wanna "import"/use.
+
+// =============
+// Crate "foo" types
+// =============
 [ExternalExport="foo"]
 typedef extern Foo;
-
 [ExternalExport="foo"]
 typedef extern Foo2;
 
+// =============
+// Crate "bar" types
+// =============
 [ExternalExport="bar"]
 typedef extern Bar;
-
 [ExternalExport="bar"]
 typedef extern Bar2;
