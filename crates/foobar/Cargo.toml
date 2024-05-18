@@ -1,0 +1,17 @@
+[package]
+name = "foobar"
+version = "2.0.1"
+edition = "2021"
+build = "build.rs"
+
+[dependencies]
+uniffi = { workspace = true, features = ["cli"] }
+
+[build-dependencies]
+uniffi = { workspace = true, features = ["build"] }
+
+[dev-dependencies]
+uniffi = { workspace = true, features = ["bindgen-tests"] }
+
+[lib]
+crate-type = ["staticlib", "cdylib", "lib"]

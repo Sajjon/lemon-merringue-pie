@@ -1,8 +1,13 @@
-[package]
-name = "multi_crate_unifii"
-version = "0.1.0"
-edition = "2021"
+[workspace]
+resolver = "2"
+members = ["crates/foo", "crates/bar", "crates/foobar"]
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+# Shared dependencies that all of the crates need - for now this is just the 
+# `radixdlt-scrypto` dependencies
+[workspace.dependencies]
+uniffi = { git = "https://github.com/mozilla/uniffi-rs/", rev = "6f33088e8100a2ea9586c8c3ecf98ab51d5aba62" }
 
-[dependencies]
+[profile.release]
+incremental = false
+panic = 'unwind'
+codegen-units = 1
