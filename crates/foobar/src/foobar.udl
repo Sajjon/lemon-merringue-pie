@@ -3,5 +3,11 @@ namespace foobar {};
 [ExternalExport="foo"]
 typedef extern Foo;
 
+[ExternalExport="foo"]
+typedef extern Foo2;
+
 [ExternalExport="bar"]
 typedef extern Bar;
+
+[ExternalExport="bar"]
+typedef extern Bar2;
