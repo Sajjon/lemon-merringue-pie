@@ -21,3 +21,13 @@ e: NONE
 o: NONE
 
 All crates declare UniFFI Records and Objects.
+
+# Good
+* It works! we can have a non-trivial hiearchy of UniFFI crates in a workspace! 🥳
+* We need not declare UniFFI types of "grandparents", meaning foo needs only declare the external types of f, but ???? hmm what if foo uses some type from e which f did not use?!
+
+# Bad
+* We MUST use udl files, even for a 100% proc macro based project
+
+# Ugly
+* We have to type `ExternalType` many types *per crate* instead of once per crate (and then just list each typedef extern we wanna use from that crate)
