@@ -1,1 +1,7 @@
 namespace foobar {};
+
+[ExternalExport="foo"]
+typedef extern Foo;
+
+[ExternalExport="bar"]
+typedef extern Bar;

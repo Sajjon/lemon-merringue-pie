@@ -6,18 +6,21 @@ uniffi::include_scaffolding!("foobar");
 
 #[cfg(test)]
 mod tests {
+    use bar::Bar;
+    use foo::Foo;
+
     use super::*;
 
     #[test]
     fn test_foo() {
         assert_eq!(
             Foobar {
-                foo: true,
-                bar: false
+                foo: Foo { foo: true },
+                bar: Bar { bar: true },
             },
             Foobar {
-                foo: true,
-                bar: false
+                foo: Foo { foo: true },
+                bar: Bar { bar: true },
             }
         );
     }
