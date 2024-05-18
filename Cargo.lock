@@ -214,9 +214,26 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0b6a852b24ab71dffc585bcb46eaf7959d175cb865a7152e35b348d1b2960422"
 
 [[package]]
+name = "e"
+version = "2.0.1"
+dependencies = [
+ "uniffi",
+]
+
+[[package]]
+name = "f"
+version = "2.0.1"
+dependencies = [
+ "e",
+ "uniffi",
+]
+
+[[package]]
 name = "foo"
 version = "2.0.1"
 dependencies = [
+ "f",
+ "o",
  "uniffi",
 ]
 
@@ -225,7 +242,10 @@ name = "foobar"
 version = "2.0.1"
 dependencies = [
  "bar",
+ "e",
+ "f",
  "foo",
+ "o",
  "uniffi",
 ]
 
@@ -315,6 +335,13 @@ checksum = "d273983c5a657a70a3e8f2a01329822f3b8c8172b73826411a55751e404a0a4a"
 dependencies = [
  "memchr",
  "minimal-lexical",
+]
+
+[[package]]
+name = "o"
+version = "2.0.1"
+dependencies = [
+ "uniffi",
 ]
 
 [[package]]

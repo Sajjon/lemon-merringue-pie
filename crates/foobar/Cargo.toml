@@ -6,6 +6,9 @@ build = "build.rs"
 
 [dependencies]
 uniffi = { workspace = true, features = ["cli"] }
+e = { path = "../e" }
+f = { path = "../f" }
+o = { path = "../o" }
 foo = { path = "../foo" }
 bar = { path = "../bar" }
 

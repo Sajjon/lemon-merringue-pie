@@ -1,13 +1,12 @@
 [package]
-name = "foo"
+name = "f"
 version = "2.0.1"
 edition = "2021"
 build = "build.rs"
 
 [dependencies]
 uniffi = { workspace = true, features = ["cli"] }
-f = { path = "../f" }
-o = { path = "../o" }
+e = { path = "../e" }
 
 [build-dependencies]
 uniffi = { workspace = true, features = ["build"] }

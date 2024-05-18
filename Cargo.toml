@@ -1,6 +1,13 @@
 [workspace]
 resolver = "2"
-members = ["crates/foo", "crates/bar", "crates/foobar"]
+members = [
+    "crates/e",
+    "crates/f",
+    "crates/o",
+    "crates/foo",
+    "crates/bar",
+    "crates/foobar",
+]
 
 # Shared dependencies that all of the crates need - for now this is just the 
 # `radixdlt-scrypto` dependencies

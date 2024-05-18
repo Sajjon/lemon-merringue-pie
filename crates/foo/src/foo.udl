@@ -1,1 +1,17 @@
 namespace foo {};
+
+// =============
+// Crate "f" types
+// =============
+[ExternalExport="f"]
+typedef extern FType;
+[ExternalExport="f"]
+typedef extern FType2;
+
+// =============
+// Crate "o" types
+// =============
+[ExternalExport="o"]
+typedef extern OType;
+[ExternalExport="o"]
+typedef extern OType2;
