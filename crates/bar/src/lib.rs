@@ -2,6 +2,8 @@ mod models;
 
 pub mod prelude {
     pub use crate::models::*;
+
+    pub(crate) use e::prelude::*;
 }
 
 pub use prelude::*;
@@ -14,7 +16,6 @@ mod tests {
 
     #[test]
     fn test_bar() {
-        assert_eq!(Bar { bar: true }, Bar { bar: true });
-        assert_ne!(Bar { bar: true }, Bar { bar: false });
+        assert_eq!(Bar::default(), Bar::default());
     }
 }

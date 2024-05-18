@@ -1,9 +1,11 @@
-#[derive(Clone, Debug, PartialEq, Eq, uniffi::Record)]
+use crate::prelude::*;
+
+#[derive(Default, Clone, Debug, PartialEq, Eq, uniffi::Record)]
 pub struct Bar {
-    pub bar: bool,
+    pub e: EType,
 }
 
-#[derive(Clone, Debug, PartialEq, Eq, uniffi::Record)]
+#[derive(Default, Clone, Debug, PartialEq, Eq, uniffi::Object)]
 pub struct Bar2 {
-    pub bar: bool,
+    pub e: EType2,
 }
