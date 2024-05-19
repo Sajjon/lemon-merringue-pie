@@ -1,12 +1,13 @@
 [workspace]
 resolver = "2"
 members = [
-    "crates/e",
-    "crates/f",
-    "crates/o",
-    "crates/foo",
-    "crates/bar",
-    "crates/foobar",
+    "crates/chef",
+    "crates/farm",
+    "crates/kitchen",
+    "crates/lemon_filling",
+    "crates/lemon_meringue_pie",
+    "crates/meringue",
+    "crates/pastry",
 ]
 
 # Shared dependencies that all of the crates need - for now this is just the 

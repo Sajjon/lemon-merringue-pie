@@ -1,0 +1,25 @@
+namespace lemon_filling {};
+
+[ExternalExport="kitchen"]
+typedef extern Kitchen;
+
+[ExternalExport="kitchen"]
+typedef extern Fridge;
+
+[ExternalExport="kitchen"]
+typedef extern Pantry;
+
+[ExternalExport="kitchen"]
+typedef extern EggBox;
+
+[ExternalExport="kitchen"]
+typedef extern ButterBlock;
+
+[ExternalExport="kitchen"]
+typedef extern FlourPackage;
+
+[ExternalExport="kitchen"]
+typedef extern SugarPackage;
+
+[ExternalExport="kitchen"]
+typedef extern Lemons;

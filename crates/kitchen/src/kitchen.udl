@@ -1,0 +1,14 @@
+namespace kitchen {};
+
+[ExternalExport="farm"]
+typedef extern Farm;
+[ExternalExport="farm"]
+typedef extern Eggs;
+[ExternalExport="farm"]
+typedef extern Butter;
+[ExternalExport="farm"]
+typedef extern Flour;
+[ExternalExport="farm"]
+typedef extern Sugar;
+[ExternalExport="farm"]
+typedef extern Lemon;

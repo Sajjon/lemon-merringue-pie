@@ -1,0 +1,24 @@
+[package]
+name = "lemon_meringue_pie"
+version = "2.0.1"
+edition = "2021"
+build = "build.rs"
+
+[dependencies]
+uniffi = { workspace = true, features = ["cli"] }
+kitchen = { path = "../kitchen" }
+chef = { path = "../chef" }
+farm = { path = "../farm" }
+meringue = { path = "../meringue" }
+pastry = { path = "../pastry" }
+lemon_filling = { path = "../lemon_filling" }
+common = { path = "../common" }
+
+[build-dependencies]
+uniffi = { workspace = true, features = ["build"] }
+
+[dev-dependencies]
+uniffi = { workspace = true, features = ["bindgen-tests"] }
+
+[lib]
+crate-type = ["staticlib", "cdylib", "lib"]

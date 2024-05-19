@@ -1,7 +1,7 @@
-This is a small demo project that showcase 
-that it is possible to use a workspace - 
+This is a small demo project that showcase
+that it is possible to use a workspace -
 multicrate setup together with UniFFI with
-a non-trivial hierachy of inter-dependent 
+a non-trivial hierarchy of inter-dependent
 crates.
 
 This project has this "dependency tree"
@@ -23,11 +23,16 @@ o: NONE
 All crates declare UniFFI Records and Objects.
 
 # Good
-* It works! we can have a non-trivial hiearchy of UniFFI crates in a workspace! 🥳
-* We need not declare UniFFI types of "grandparents", meaning foo needs only declare the external types of f, but ???? hmm what if foo uses some type from e which f did not use?!
+
+- It works! we can have a non-trivial hierarchy of UniFFI crates in a workspace! 🥳
+- We need not declare UniFFI types of "grandparents", meaning foo needs only declare the external types of f, but ???? hmm what if foo uses some type from e which f did not use?!
 
 # Bad
-* We MUST use udl files, even for a 100% proc macro based project
+
+- We MUST use udl files, even for a 100% proc macro based project
 
 # Ugly
-* We have to type `ExternalType` many types *per crate* instead of once per crate (and then just list each typedef extern we wanna use from that crate)
+
+- We have to type `ExternalType` many types _per crate_ instead of once per crate (and then just list each typedef extern we wanna use from that crate)
+
+[pie]: https://www.bbc.co.uk/food/recipes/marys_lemon_meringue_pie_02330

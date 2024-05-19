@@ -1,0 +1,7 @@
+namespace lemon_meringue_pie {};
+
+[ExternalExport="farm"]
+typedef extern Farm;
+
+[ExternalInterfaceExport="farm"]
+typedef extern Produce;

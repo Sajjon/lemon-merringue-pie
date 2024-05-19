@@ -1,9 +1,0 @@
-namespace f {};
-
-// =============
-// Crate "e" types
-// =============
-[ExternalExport="e"]
-typedef extern EType;
-[ExternalExport="e"]
-typedef extern EType2;

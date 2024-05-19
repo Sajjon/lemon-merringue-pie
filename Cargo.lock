@@ -105,14 +105,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0c4b4d0bd25bd0b74681c0ad21497610ce1b7c91b1022cd21c80c6fbdd9476b0"
 
 [[package]]
-name = "bar"
-version = "2.0.1"
-dependencies = [
- "e",
- "uniffi",
-]
-
-[[package]]
 name = "basic-toml"
 version = "0.1.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -169,6 +161,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "chef"
+version = "2.0.1"
+dependencies = [
+ "common",
+ "uniffi",
+]
+
+[[package]]
 name = "clap"
 version = "4.5.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -215,38 +215,14 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0b6a852b24ab71dffc585bcb46eaf7959d175cb865a7152e35b348d1b2960422"
 
 [[package]]
-name = "e"
+name = "common"
 version = "2.0.1"
-dependencies = [
- "uniffi",
-]
 
 [[package]]
-name = "f"
+name = "farm"
 version = "2.0.1"
 dependencies = [
- "e",
- "uniffi",
-]
-
-[[package]]
-name = "foo"
-version = "2.0.1"
-dependencies = [
- "f",
- "o",
- "uniffi",
-]
-
-[[package]]
-name = "foobar"
-version = "2.0.1"
-dependencies = [
- "bar",
- "e",
- "f",
- "foo",
- "o",
+ "common",
  "uniffi",
 ]
 
@@ -295,6 +271,39 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "49f1f14873335454500d59611f1cf4a4b0f786f9ac11f4312a78e4cf2566695b"
 
 [[package]]
+name = "kitchen"
+version = "2.0.1"
+dependencies = [
+ "common",
+ "farm",
+ "uniffi",
+]
+
+[[package]]
+name = "lemon_filling"
+version = "2.0.1"
+dependencies = [
+ "common",
+ "farm",
+ "kitchen",
+ "uniffi",
+]
+
+[[package]]
+name = "lemon_meringue_pie"
+version = "2.0.1"
+dependencies = [
+ "chef",
+ "common",
+ "farm",
+ "kitchen",
+ "lemon_filling",
+ "meringue",
+ "pastry",
+ "uniffi",
+]
+
+[[package]]
 name = "log"
 version = "0.4.21"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -305,6 +314,16 @@ name = "memchr"
 version = "2.7.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6c8640c5d730cb13ebd907d8d04b52f55ac9a2eec55b440c8892f40d56c76c1d"
+
+[[package]]
+name = "meringue"
+version = "2.0.1"
+dependencies = [
+ "common",
+ "farm",
+ "kitchen",
+ "uniffi",
+]
 
 [[package]]
 name = "mime"
@@ -339,13 +358,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "o"
-version = "2.0.1"
-dependencies = [
- "uniffi",
-]
-
-[[package]]
 name = "once_cell"
 version = "1.19.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -356,6 +368,16 @@ name = "paste"
 version = "1.0.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "57c0d7b74b563b49d38dae00a0c37d4d6de9b432382b2892f0574ddcae73fd0a"
+
+[[package]]
+name = "pastry"
+version = "2.0.1"
+dependencies = [
+ "common",
+ "farm",
+ "kitchen",
+ "uniffi",
+]
 
 [[package]]
 name = "plain"
