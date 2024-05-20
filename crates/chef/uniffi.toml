@@ -1,1 +1,4 @@
 namespace = "chef"
+
+[bindings.kotlin]
+package_name = "com.sajjon.chef"

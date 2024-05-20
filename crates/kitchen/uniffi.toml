@@ -1,1 +1,4 @@
 namespace = "kitchen"
+
+[bindings.kotlin]
+package_name = "com.sajjon.kitchen"

@@ -1,1 +1,4 @@
 namespace = "farm"
+
+[bindings.kotlin]
+package_name = "com.sajjon.farm"

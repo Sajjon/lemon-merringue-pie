@@ -1,4 +1,4 @@
-import lemon_meringue_pie
+import LemonMeringuePie
 
 func test() {
   let chef = Chef(name: "Auguste Gusteau", money: Money(amount: 50))

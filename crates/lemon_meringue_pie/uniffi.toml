@@ -1,1 +1,7 @@
 namespace = "lemon_meringue_pie"
+
+[bindings.swift]
+module_name = "LemonMeringuePie"
+
+[bindings.kotlin]
+package_name = "com.sajjon.lemon.meringue.pie"

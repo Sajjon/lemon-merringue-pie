@@ -1,1 +1,4 @@
 namespace = "lemon_filling"
+
+[bindings.kotlin]
+package_name = "com.sajjon.lemon.filling"

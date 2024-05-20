@@ -1,1 +1,4 @@
 namespace = "meringue"
+
+[bindings.kotlin]
+package_name = "com.sajjon.meringue"
