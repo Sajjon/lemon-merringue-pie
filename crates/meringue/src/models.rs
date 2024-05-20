@@ -24,7 +24,7 @@ impl Meringue {
     }
 
     pub fn from_kitchen(kitchen: &Kitchen) -> Self {
-        Self::bake(kitchen.fridge.egg.clone(), kitchen.pantry.sugar.clone())
+        Self::bake(kitchen.fridge.egg, kitchen.pantry.sugar)
     }
 }
 

@@ -25,9 +25,9 @@ impl LemonMeringuePie {
         pastry: Pastry,
     ) -> Self {
         Self {
-            lemon_filling: lemon_filling.clone(),
-            meringue: meringue.clone(),
-            pastry: pastry.clone(),
+            lemon_filling,
+            meringue,
+            pastry,
         }
     }
 }

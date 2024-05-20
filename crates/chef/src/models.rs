@@ -1,7 +1,5 @@
 use std::sync::Arc;
 
-use crate::prelude::*;
-
 #[derive(Default, Clone, Debug, PartialEq, Eq, uniffi::Object)]
 pub struct Chef {
     pub name: String,

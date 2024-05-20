@@ -9,9 +9,9 @@ pub struct Fridge {
 impl Fridge {
     pub fn stock_with(produce: farm::Produce) -> Self {
         Self {
-            egg: EggBox::from(produce.clone()),
-            butter: ButterBlock::from(produce.clone()),
-            lemons: Lemons::from(produce.clone()),
+            egg: EggBox::from(produce),
+            butter: ButterBlock::from(produce),
+            lemons: Lemons::from(produce),
         }
     }
 }
@@ -25,8 +25,8 @@ pub struct Pantry {
 impl Pantry {
     pub fn stock_with(produce: farm::Produce) -> Self {
         Self {
-            flour: FlourPackage::from(produce.clone()),
-            sugar: SugarPackage::from(produce.clone()),
+            flour: FlourPackage::from(produce),
+            sugar: SugarPackage::from(produce),
         }
     }
 }
@@ -40,8 +40,8 @@ pub struct Kitchen {
 #[uniffi::export]
 pub fn kitchen_stock_with(produce: farm::Produce) -> Kitchen {
     Kitchen {
-        pantry: Pantry::stock_with(produce.clone()),
-        fridge: Fridge::stock_with(produce.clone()),
+        pantry: Pantry::stock_with(produce),
+        fridge: Fridge::stock_with(produce),
     }
 }
 
@@ -63,7 +63,7 @@ impl From<farm::Eggs> for EggBox {
 }
 impl From<EggBox> for farm::Eggs {
     fn from(_eggs: EggBox) -> Self {
-        Self::default()
+        Self
     }
 }
 impl From<farm::Produce> for EggBox {
@@ -90,7 +90,7 @@ impl From<farm::Butter> for ButterBlock {
 
 impl From<ButterBlock> for farm::Butter {
     fn from(_butter_block: ButterBlock) -> Self {
-        Self::default()
+        Self
     }
 }
 
@@ -117,7 +117,7 @@ impl From<farm::Flour> for FlourPackage {
 }
 impl From<FlourPackage> for farm::Flour {
     fn from(_flour_package: FlourPackage) -> Self {
-        Self::default()
+        Self
     }
 }
 impl From<farm::Produce> for FlourPackage {
@@ -145,7 +145,7 @@ impl From<farm::Sugar> for SugarPackage {
 
 impl From<SugarPackage> for farm::Sugar {
     fn from(_sugar: SugarPackage) -> Self {
-        Self::default()
+        Self
     }
 }
 
@@ -173,7 +173,7 @@ impl From<farm::Lemon> for Lemons {
 
 impl From<Lemons> for farm::Lemon {
     fn from(_lemon: Lemons) -> Self {
-        Self::default()
+        Self
     }
 }
 

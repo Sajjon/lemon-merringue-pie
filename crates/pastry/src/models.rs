@@ -34,10 +34,10 @@ impl Pastry {
 
     pub fn from_kitchen(kitchen: &Kitchen) -> Self {
         Self::bake(
-            kitchen.pantry.flour.clone(),
-            kitchen.fridge.butter.clone(),
-            kitchen.fridge.egg.clone(),
-            kitchen.pantry.sugar.clone(),
+            kitchen.pantry.flour,
+            kitchen.fridge.butter,
+            kitchen.fridge.egg,
+            kitchen.pantry.sugar,
         )
     }
 }

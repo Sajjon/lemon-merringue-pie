@@ -28,10 +28,10 @@ impl LemonFilling {
 
     pub fn from_kitchen(kitchen: &Kitchen) -> LemonFilling {
         Self::bake(
-            kitchen.fridge.lemons.clone(),
-            kitchen.pantry.flour.clone(),
-            kitchen.pantry.sugar.clone(),
-            kitchen.fridge.egg.clone(),
+            kitchen.fridge.lemons,
+            kitchen.pantry.flour,
+            kitchen.pantry.sugar,
+            kitchen.fridge.egg,
         )
     }
 }

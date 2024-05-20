@@ -3,8 +3,6 @@ mod models;
 pub mod prelude {
 
     pub use crate::models::*;
-
-    pub(crate) use common::prelude::*;
 }
 
 pub use prelude::*;

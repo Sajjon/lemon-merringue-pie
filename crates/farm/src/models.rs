@@ -1,5 +1,3 @@
-use crate::prelude::*;
-
 #[derive(Clone, Copy, Debug, PartialEq, Eq, uniffi::Record)]
 pub struct Produce {
     pub producer: Farm,
@@ -28,12 +26,12 @@ pub fn new_farm() -> Farm {
 #[uniffi::export]
 pub fn farm_produce(farm: &Farm) -> Produce {
     Produce {
-        producer: farm.clone(),
-        eggs: Eggs::default(),
-        butter: Butter::default(),
-        flour: Flour::default(),
-        sugar: Sugar::default(),
-        lemon: Lemon::default(),
+        producer: *farm,
+        eggs: Eggs,
+        butter: Butter,
+        flour: Flour,
+        sugar: Sugar,
+        lemon: Lemon,
     }
 }
 

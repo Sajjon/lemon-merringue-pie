@@ -12,7 +12,6 @@ farm = { path = "../farm" }
 meringue = { path = "../meringue" }
 pastry = { path = "../pastry" }
 lemon_filling = { path = "../lemon_filling" }
-common = { path = "../common" }
 
 [build-dependencies]
 uniffi = { workspace = true, features = ["build"] }

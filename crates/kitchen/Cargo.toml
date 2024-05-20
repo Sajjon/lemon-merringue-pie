@@ -7,7 +7,6 @@ build = "build.rs"
 [dependencies]
 uniffi = { workspace = true, features = ["cli"] }
 farm = { path = "../farm" }
-common = { path = "../common" }
 
 [build-dependencies]
 uniffi = { workspace = true, features = ["build"] }
