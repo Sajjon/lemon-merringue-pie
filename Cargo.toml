@@ -11,7 +11,7 @@ members = [
 ]
 
 [workspace.dependencies]
-uniffi = { git = "https://github.com/mozilla/uniffi-rs/", rev = "aa338ccb435d81d36f7adef8954bcffebdd4a7d1" }
+uniffi = { git = "https://github.com/bendk/uniffi-rs/", rev = "4b65c3796bc3743404e1ee2a7b4ab51e24589aa6" }
 
 [profile.release]
 incremental = false

@@ -7,6 +7,7 @@ use std::ops::AddAssign;
 pub struct Chef {
     pub name: String,
     pub money: RwLock<Money>,
+    pub bag_of_bytes: BagOfBytes,
 }
 
 #[uniffi::export]
@@ -16,6 +17,7 @@ impl Chef {
         Arc::new(Self {
             name,
             money: RwLock::new(money),
+            bag_of_bytes: BagOfBytes::from(vec![0xde, 0xad, 0xbe, 0xef]),
         })
     }
 

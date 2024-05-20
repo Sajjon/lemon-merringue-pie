@@ -1,10 +1,11 @@
 use crate::prelude::*;
 
-#[derive(Default, Clone, Copy, Debug, PartialEq, Eq, uniffi::Record)]
+#[derive(Default, Clone, Debug, PartialEq, Eq, uniffi::Record)]
 pub struct Fridge {
     pub egg: EggBox,
     pub butter: ButterBlock,
     pub lemons: Lemons,
+    pub bag_of_bytes: BagOfBytes,
 }
 impl Fridge {
     pub fn stock_with(produce: farm::Produce) -> Self {
@@ -12,6 +13,7 @@ impl Fridge {
             egg: EggBox::from(produce.clone()),
             butter: ButterBlock::from(produce.clone()),
             lemons: Lemons::from(produce.clone()),
+            bag_of_bytes: BagOfBytes::from(vec![0xde, 0xad, 0xbe, 0xef]),
         }
     }
 }
