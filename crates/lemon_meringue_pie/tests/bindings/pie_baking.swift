@@ -1,7 +1,6 @@
 import lemon_meringue_pie
 
 func test() {
-
   let chef = Chef(name: "Auguste Gusteau", money: Money(amount: 50))
   let farm = Farm(money: Money(amount: 200))
   let produce = farm.produce()
