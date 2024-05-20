@@ -10,10 +10,8 @@ members = [
     "crates/pastry",
 ]
 
-# Shared dependencies that all of the crates need - for now this is just the 
-# `radixdlt-scrypto` dependencies
 [workspace.dependencies]
-uniffi = { git = "https://github.com/mozilla/uniffi-rs/", rev = "6f33088e8100a2ea9586c8c3ecf98ab51d5aba62" }
+uniffi = { git = "https://github.com/mozilla/uniffi-rs/", rev = "aa338ccb435d81d36f7adef8954bcffebdd4a7d1" }
 
 [profile.release]
 incremental = false
