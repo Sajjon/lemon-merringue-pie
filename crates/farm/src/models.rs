@@ -1,6 +1,13 @@
-#[derive(Clone, Copy, Debug, PartialEq, Eq, uniffi::Record)]
+use std::{
+    ops::SubAssign,
+    sync::{Arc, RwLock},
+};
+
+use crate::prelude::*;
+
+#[derive(Clone, Debug, uniffi::Record)]
 pub struct Produce {
-    pub producer: Farm,
+    pub producer: Arc<Farm>,
     pub eggs: Eggs,
     pub butter: Butter,
     pub flour: Flour,
@@ -8,30 +15,38 @@ pub struct Produce {
     pub lemon: Lemon,
 }
 
-#[derive(uniffi::Record, Default, Clone, PartialEq, Eq, Copy, Debug)]
-pub struct Money {
-    pub amount: u64,
-}
-
-#[derive(Clone, Default, Copy, Debug, PartialEq, Eq, uniffi::Record)]
+#[derive(Debug, uniffi::Object)]
 pub struct Farm {
-    pub money: Money,
+    pub money: RwLock<Money>,
 }
 
 #[uniffi::export]
-pub fn new_farm() -> Farm {
-    Farm::default()
-}
+impl Farm {
+    #[uniffi::constructor]
+    pub fn new(money: Money) -> Arc<Self> {
+        Arc::new(Self {
+            money: RwLock::new(money),
+        })
+    }
 
-#[uniffi::export]
-pub fn farm_produce(farm: &Farm) -> Produce {
-    Produce {
-        producer: *farm,
-        eggs: Eggs,
-        butter: Butter,
-        flour: Flour,
-        sugar: Sugar,
-        lemon: Lemon,
+    pub fn balance(self: Arc<Self>) -> u64 {
+        self.money.try_read().unwrap().amount
+    }
+
+    pub fn withdraw_money(self: Arc<Self>, amount: u64) -> Money {
+        self.money.try_write().unwrap().sub_assign(amount);
+        Money { amount }
+    }
+
+    pub fn produce(self: Arc<Self>) -> Produce {
+        Produce {
+            producer: self.clone(),
+            eggs: Eggs,
+            butter: Butter,
+            flour: Flour,
+            sugar: Sugar,
+            lemon: Lemon,
+        }
     }
 }
 

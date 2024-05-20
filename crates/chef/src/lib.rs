@@ -3,19 +3,11 @@ mod models;
 pub mod prelude {
 
     pub use crate::models::*;
+
+    pub(crate) use money::prelude::*;
+    pub(crate) use std::sync::Arc;
 }
 
 pub use prelude::*;
 
 uniffi::include_scaffolding!("chef");
-
-// #[cfg(test)]
-// mod tests {
-//     use super::*;
-
-//     #[test]
-//     fn test_etypes() {
-//         assert_eq!(EType { val: true }, EType { val: true });
-//         assert_eq!(EType2 { val: true }, EType2 { val: true });
-//     }
-// }

@@ -41,3 +41,9 @@ pub fn bake_lemon_meringue_pie(chef: Arc<Chef>, kitchen: Kitchen) -> LemonMering
         Pastry::from_kitchen(&kitchen),
     )
 }
+
+#[uniffi::export]
+pub fn chef_sell_pie_to_farm(chef: Arc<Chef>, _pie: LemonMeringuePie, farm: Arc<Farm>, price: u64) {
+    let money = farm.withdraw_money(price);
+    chef.deposit_money(money)
+}

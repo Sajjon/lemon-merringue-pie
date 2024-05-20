@@ -9,9 +9,9 @@ pub struct Fridge {
 impl Fridge {
     pub fn stock_with(produce: farm::Produce) -> Self {
         Self {
-            egg: EggBox::from(produce),
-            butter: ButterBlock::from(produce),
-            lemons: Lemons::from(produce),
+            egg: EggBox::from(produce.clone()),
+            butter: ButterBlock::from(produce.clone()),
+            lemons: Lemons::from(produce.clone()),
         }
     }
 }
@@ -25,8 +25,8 @@ pub struct Pantry {
 impl Pantry {
     pub fn stock_with(produce: farm::Produce) -> Self {
         Self {
-            flour: FlourPackage::from(produce),
-            sugar: SugarPackage::from(produce),
+            flour: FlourPackage::from(produce.clone()),
+            sugar: SugarPackage::from(produce.clone()),
         }
     }
 }
@@ -40,8 +40,8 @@ pub struct Kitchen {
 #[uniffi::export]
 pub fn kitchen_stock_with(produce: farm::Produce) -> Kitchen {
     Kitchen {
-        pantry: Pantry::stock_with(produce),
-        fridge: Fridge::stock_with(produce),
+        pantry: Pantry::stock_with(produce.clone()),
+        fridge: Fridge::stock_with(produce.clone()),
     }
 }
 

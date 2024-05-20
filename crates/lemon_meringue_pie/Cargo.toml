@@ -1,6 +1,6 @@
 [package]
 name = "lemon_meringue_pie"
-version = "2.0.1"
+version = "0.1.0"
 edition = "2021"
 build = "build.rs"
 
@@ -9,6 +9,7 @@ uniffi = { workspace = true, features = ["cli"] }
 kitchen = { path = "../kitchen" }
 chef = { path = "../chef" }
 farm = { path = "../farm" }
+money = { path = "../money" }
 meringue = { path = "../meringue" }
 pastry = { path = "../pastry" }
 lemon_filling = { path = "../lemon_filling" }

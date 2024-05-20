@@ -1,12 +1,11 @@
 [package]
-name = "farm"
+name = "money"
 version = "0.1.0"
 edition = "2021"
 build = "build.rs"
 
 [dependencies]
 uniffi = { workspace = true, features = ["cli"] }
-money = { path = "../money" }
 
 [build-dependencies]
 uniffi = { workspace = true, features = ["build"] }
