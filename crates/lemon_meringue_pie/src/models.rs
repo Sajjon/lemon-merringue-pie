@@ -2,19 +2,19 @@ use std::sync::Arc;
 
 use crate::prelude::*;
 
-// #[derive(Clone, Debug, PartialEq, Eq, Default)]
-// pub struct PieID(Uuid);
+#[derive(Clone, Debug, PartialEq, Eq, Default)]
+pub struct PieBatchID(BatchID);
 
-// uniffi::custom_type!(PieID, Uuid, {
-//     remote,
-//     from_custom: |pie_id| pie_id.0,
-//     try_into_custom: |uuid| Ok(PieID(uuid))
-// });
+uniffi::remote_type!(BatchID, farm);
+uniffi::custom_type!(PieBatchID, BatchID, {
+    from_custom: |batch_id| batch_id.0,
+    try_into_custom: |uuid| Ok(PieBatchID(uuid))
+});
 
-// #[uniffi::export]
-// pub fn new_pie_id_default() -> PieID {
-//     ApplianceID::default()
-// }
+#[uniffi::export]
+pub fn new_pie_batch_id_random() -> PieBatchID {
+    PieBatchID(new_batch_id_random())
+}
 
 /// Lemon Meringue Pie is the most tasty of pies, [here is a recipe].
 ///
@@ -26,6 +26,7 @@ use crate::prelude::*;
 /// [recipe]: https://www.bbc.co.uk/food/recipes/marys_lemon_meringue_pie_02330
 #[derive(Default, Clone, Debug, PartialEq, Eq, uniffi::Record)]
 pub struct LemonMeringuePie {
+    pub batch: PieBatchID,
     pub lemon_filling: LemonFilling,
     pub meringue: Meringue,
     pub pastry: Pastry,
@@ -39,6 +40,7 @@ impl LemonMeringuePie {
         pastry: Pastry,
     ) -> Self {
         Self {
+            batch: new_pie_batch_id_random(),
             lemon_filling,
             meringue,
             pastry,
