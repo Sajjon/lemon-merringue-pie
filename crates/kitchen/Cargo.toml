@@ -6,7 +6,7 @@ build = "build.rs"
 
 [dependencies]
 uniffi = { workspace = true, features = ["cli"] }
-money = { path = "../money" }
+common = { path = "../common" }
 farm = { path = "../farm" }
 
 [build-dependencies]
