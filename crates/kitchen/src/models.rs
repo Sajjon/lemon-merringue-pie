@@ -5,7 +5,8 @@ pub struct Fridge {
     pub egg: EggBox,
     pub butter: ButterBlock,
     pub lemons: Lemons,
-    pub bag_of_bytes: BagOfBytes,
+    pub firmware_hash: BagOfBytes,
+    pub uuid: ApplianceID,
 }
 impl Fridge {
     pub fn stock_with(produce: farm::Produce) -> Self {
@@ -13,7 +14,8 @@ impl Fridge {
             egg: EggBox::from(produce.clone()),
             butter: ButterBlock::from(produce.clone()),
             lemons: Lemons::from(produce.clone()),
-            bag_of_bytes: BagOfBytes::from(vec![0xde, 0xad, 0xbe, 0xef]),
+            firmware_hash: BagOfBytes::from(vec![0xde, 0xad, 0xbe, 0xef]),
+            uuid: ApplianceID::default(),
         }
     }
 }

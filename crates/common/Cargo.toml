@@ -1,13 +1,14 @@
 [package]
-name = "chef"
+name = "common"
 version = "0.1.0"
 edition = "2021"
 build = "build.rs"
 
 [dependencies]
+itertools = "0.13.0"
+hex = "0.4.3"
 uniffi = { workspace = true, features = ["cli"] }
-money = { path = "../money" }
-common = { path = "../common" }
+uuid = "1.8.0"
 
 [build-dependencies]
 uniffi = { workspace = true, features = ["build"] }

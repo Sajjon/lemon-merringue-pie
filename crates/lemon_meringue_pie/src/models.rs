@@ -2,6 +2,20 @@ use std::sync::Arc;
 
 use crate::prelude::*;
 
+// #[derive(Clone, Debug, PartialEq, Eq, Default)]
+// pub struct PieID(Uuid);
+
+// uniffi::custom_type!(PieID, Uuid, {
+//     remote,
+//     from_custom: |pie_id| pie_id.0,
+//     try_into_custom: |uuid| Ok(PieID(uuid))
+// });
+
+// #[uniffi::export]
+// pub fn new_pie_id_default() -> PieID {
+//     ApplianceID::default()
+// }
+
 /// Lemon Meringue Pie is the most tasty of pies, [here is a recipe].
 ///
 /// It consists of:

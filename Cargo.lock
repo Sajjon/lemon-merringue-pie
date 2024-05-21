@@ -164,6 +164,7 @@ dependencies = [
 name = "chef"
 version = "0.1.0"
 dependencies = [
+ "common",
  "money",
  "uniffi",
 ]
@@ -213,6 +214,16 @@ name = "colorchoice"
 version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0b6a852b24ab71dffc585bcb46eaf7959d175cb865a7152e35b348d1b2960422"
+
+[[package]]
+name = "common"
+version = "0.1.0"
+dependencies = [
+ "hex",
+ "itertools",
+ "uniffi",
+ "uuid",
+]
 
 [[package]]
 name = "either"
@@ -291,8 +302,8 @@ checksum = "49f1f14873335454500d59611f1cf4a4b0f786f9ac11f4312a78e4cf2566695b"
 name = "kitchen"
 version = "0.1.0"
 dependencies = [
+ "common",
  "farm",
- "money",
  "uniffi",
 ]
 
@@ -310,6 +321,7 @@ name = "lemon_meringue_pie"
 version = "0.1.0"
 dependencies = [
  "chef",
+ "common",
  "farm",
  "kitchen",
  "lemon_filling",
@@ -715,6 +727,12 @@ name = "utf8parse"
 version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "711b9620af191e0cdc7468a8d14e709c3dcdb115b36f838e601583af800a370a"
+
+[[package]]
+name = "uuid"
+version = "1.8.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a183cf7feeba97b4dd1c0d46788634f6221d87fa961b305bed08c851829efcc0"
 
 [[package]]
 name = "version_check"

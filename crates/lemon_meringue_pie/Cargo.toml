@@ -10,6 +10,7 @@ kitchen = { path = "../kitchen" }
 chef = { path = "../chef" }
 farm = { path = "../farm" }
 money = { path = "../money" }
+common = { path = "../common" }
 meringue = { path = "../meringue" }
 pastry = { path = "../pastry" }
 lemon_filling = { path = "../lemon_filling" }

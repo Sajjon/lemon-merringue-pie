@@ -1,0 +1,30 @@
+namespace = "common"
+
+[bindings.kotlin]
+package_name = "com.sajjon.common"
+
+
+[bindings.swift.custom_types.BagOfBytes]
+type_name = "Data"
+imports = ["Foundation"]
+into_custom = "{ Data({}.map({ i8 in UInt8(bitPattern: i8) })) }()"
+from_custom = "{ {}.map({ u8 in Int8(bitPattern: u8) }) }()"
+
+[bindings.kotlin.custom_types.BagOfBytes]
+type_name = "List<UByte>"
+imports = []
+into_custom = "{}.map({ it.toUByte() })"
+from_custom = "{}.map({ it.toByte() })"
+
+
+[bindings.swift.custom_types.Uuid]
+type_name = "UUID"
+imports = ["Foundation"]
+into_custom = "UUID(uuidString: {})!"
+from_custom = "{}.uuidString"
+
+[bindings.kotlin.custom_types.Uuid]
+type_name = "UUID"
+imports = ["java.util.UUID"]
+into_custom = "UUID.fromString({})"
+from_custom = "{}.toString()"

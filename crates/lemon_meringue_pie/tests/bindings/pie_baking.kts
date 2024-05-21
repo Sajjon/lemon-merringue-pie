@@ -5,6 +5,7 @@ import com.sajjon.farm.*
 import com.sajjon.pastry.*
 import com.sajjon.meringue.*
 import com.sajjon.lemon.filling.*
+import com.sajjon.common.*
 import com.sajjon.kitchen.*
 
 fun test_bake_pie() {
@@ -28,13 +29,15 @@ fun test_bag_of_bytes() {
         egg = EggBox.TWELVE,
         butter = ButterBlock(weight = 1u),
         lemons = Lemons(count = 1u),
-        bagOfBytes = listOf(1.toUByte())
+        firmwareHash = listOf(1.toUByte()),
+        uuid = newApplianceIdDefault()
     )
     val f1 = Fridge(
         egg = EggBox.TWELVE,
         butter = ButterBlock(weight = 1u),
         lemons = Lemons(count = 1u),
-        bagOfBytes = listOf(1.toUByte())
+        firmwareHash = listOf(1.toUByte()),
+        uuid = newApplianceIdDefault()
     )
     assert(f0 == f1)
 

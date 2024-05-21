@@ -1,1 +1,4 @@
 namespace kitchen {};
+
+[ExternalInterfaceExport="common"]
+typedef extern ApplianceID;
