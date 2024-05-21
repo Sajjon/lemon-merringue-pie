@@ -11,7 +11,6 @@ pub struct BatchID(Uuid);
 uniffi::remote_type!(Uuid, common);
 
 uniffi::custom_type!(BatchID, Uuid, {
-    remote,
     from_custom: |batch_id| batch_id.0,
     try_into_custom: |uuid| Ok(BatchID(uuid))
 });

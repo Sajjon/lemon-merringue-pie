@@ -5,7 +5,6 @@ use crate::prelude::*;
 #[derive(Clone, Debug, PartialEq, Eq, Default)]
 pub struct PieBatchID(BatchID);
 
-uniffi::remote_type!(BatchID, farm);
 uniffi::custom_type!(PieBatchID, BatchID, {
     from_custom: |batch_id| batch_id.0,
     try_into_custom: |uuid| Ok(PieBatchID(uuid))
