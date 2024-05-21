@@ -4,6 +4,7 @@ func test() {
   let chef = Chef(name: "Auguste Gusteau", money: Money(amount: 50))
   let farm = Farm(money: Money(amount: 200))
   let produce = farm.produce()
+  assert(produce.batch != farm.produce().batch)
   let kitchen = kitchenStockWith(produce: produce)
   let pie = bakeLemonMeringuePie(chef: chef, kitchen: kitchen)
 

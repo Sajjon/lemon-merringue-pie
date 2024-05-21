@@ -5,8 +5,25 @@ use std::{
 
 use crate::prelude::*;
 
+#[derive(Clone, Debug, PartialEq, Eq, Default)]
+pub struct BatchID(Uuid);
+
+uniffi::remote_type!(Uuid, common);
+
+uniffi::custom_type!(BatchID, Uuid, {
+    remote,
+    from_custom: |batch_id| batch_id.0,
+    try_into_custom: |uuid| Ok(BatchID(uuid))
+});
+
+#[uniffi::export]
+pub fn new_batch_id_random() -> BatchID {
+    BatchID(Uuid::new_v4())
+}
+
 #[derive(Clone, Debug, uniffi::Record)]
 pub struct Produce {
+    pub batch: BatchID,
     pub producer: Arc<Farm>,
     pub eggs: Eggs,
     pub butter: Butter,
@@ -40,6 +57,7 @@ impl Farm {
 
     pub fn produce(self: Arc<Self>) -> Produce {
         Produce {
+            batch: new_batch_id_random(),
             producer: self.clone(),
             eggs: Eggs,
             butter: Butter,

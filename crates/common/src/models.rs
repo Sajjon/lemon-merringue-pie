@@ -11,6 +11,11 @@ uniffi::custom_type!(ApplianceID, Uuid, {
 });
 
 #[uniffi::export]
+pub fn new_appliance_id_random() -> ApplianceID {
+    ApplianceID(Uuid::new_v4())
+}
+
+#[uniffi::export]
 pub fn new_appliance_id_default() -> ApplianceID {
     ApplianceID::default()
 }
