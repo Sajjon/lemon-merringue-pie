@@ -1,4 +1,3 @@
-use itertools::*;
 use std::ops::{AddAssign, SubAssign};
 
 #[derive(uniffi::Record, Default, Clone, PartialEq, Eq, Copy, Debug)]

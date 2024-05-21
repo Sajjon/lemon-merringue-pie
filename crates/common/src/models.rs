@@ -6,7 +6,6 @@ use crate::prelude::*;
 pub struct ApplianceID(Uuid);
 
 uniffi::custom_type!(ApplianceID, Uuid, {
-    remote,
     from_custom: |appliance_id| appliance_id.0,
     try_into_custom: |uuid| Ok(ApplianceID(uuid))
 });
