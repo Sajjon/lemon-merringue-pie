@@ -8,6 +8,7 @@ pub struct Fridge {
     pub firmware_hash: BagOfBytes,
     pub uuid: ApplianceID,
 }
+
 impl Fridge {
     pub fn stock_with(produce: farm::Produce) -> Self {
         Self {

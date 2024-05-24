@@ -1,8 +1,10 @@
 namespace = "common"
 
+[bindings.swift]
+module_name = "Common"
+
 [bindings.kotlin]
 package_name = "com.sajjon.common"
-
 
 [bindings.swift.custom_types.BagOfBytes]
 type_name = "Data"

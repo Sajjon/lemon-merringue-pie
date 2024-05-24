@@ -13,12 +13,15 @@ pub struct Chef {
 #[uniffi::export]
 impl Chef {
     #[uniffi::constructor]
-    pub fn new(name: String, money: Money) -> Arc<Self> {
-        Arc::new(Self {
+    pub fn new(name: String, money: Money) -> Result<Arc<Self>> {
+        if money.amount == 0 {
+            return Err(Error::ChefMustStartWithMoney);
+        }
+        Ok(Arc::new(Self {
             name,
             money: RwLock::new(money),
             bag_of_bytes: BagOfBytes::from(vec![0xde, 0xad, 0xbe, 0xef]),
-        })
+        }))
     }
 
     pub fn balance(self: Arc<Self>) -> u64 {

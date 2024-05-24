@@ -11,10 +11,16 @@ members = [
 ]
 
 [workspace.dependencies]
-uniffi = { git = "https://github.com/bendk/uniffi-rs/", rev = "4b65c3796bc3743404e1ee2a7b4ab51e24589aa6" }
+derive_more = { git = "https://github.com/JelteF/derive_more", rev = "1196b2dd7a366c06db621093884adbc379fc0f0a", features = [
+    "debug",
+    "display",
+    "from_str",
+] }
+uniffi = { git = "https://github.com/bendk/uniffi-rs/", rev = "f4fae828ac496e412fce70ab2f02f09ef19932c4" }
 uuid = { version = "1.8.0", features = ["v4"] }
 itertools = "0.13.0"
 hex = "0.4.3"
+thiserror = "1.0.61"
 
 [profile.release]
 incremental = false
