@@ -22,7 +22,7 @@ mod tests {
 
     #[test]
     fn bake() {
-        let chef = Chef::new("Auguste Gusteau".to_owned(), Money::from(50));
+        let chef = Chef::new("Auguste Gusteau".to_owned(), Money::from(50)).unwrap();
         let farm = Farm::new(Money::from(200));
         let produce = farm.clone().produce();
         let kitchen = kitchen_stock_with(produce);

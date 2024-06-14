@@ -24,6 +24,7 @@ pub fn new_batch_id_random() -> BatchID {
 #[derive(Clone, Debug, uniffi::Record)]
 pub struct Produce {
     pub batch: BatchID,
+    pub epoch: Epoch,
     pub producer: Arc<Farm>,
     pub eggs: Eggs,
     pub butter: Butter,
@@ -58,6 +59,7 @@ impl Farm {
     pub fn produce(self: Arc<Self>) -> Produce {
         Produce {
             batch: new_batch_id_random(),
+            epoch: Epoch::from(1337),
             producer: self.clone(),
             eggs: Eggs,
             butter: Butter,
