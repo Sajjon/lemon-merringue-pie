@@ -8,6 +8,8 @@ func test() {
   let kitchen = kitchenStockWith(produce: produce)
   let pie = bakeLemonMeringuePie(chef: chef, kitchen: kitchen)
 
+  assert(pie.batch != newPieBatchIdRandom())
+
   assert(chef.balance() == 50)
   assert(farm.balance() == 200)
 
